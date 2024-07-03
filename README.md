@@ -22,8 +22,13 @@ unsplash.comのAPIが使用不可になりました。
 ## ミニゲーム機能
 https://github.com/okuzaki1208/20240307_self_introduction/assets/165624982/d59c8461-9248-4279-b487-ad8dffb01c96
 
-キーボードのWASDを使ってボールを操作できます。  
+キーボードのW/A/S/Dキーを使ってボールを操作できます。  
 ボールの中心をクリックすると、マウスカーソル追従モードに切り替わります。  
+ボールをオブジェクトに当てることで、画面上部のカウンターが加算されます。  
+
+## 参考・出典
+lopan.jp  
+https://lopan.jp/css-animation/slideshow/
   
 ## 著者
 Kyohei Okuzaki @okuzaki1208
