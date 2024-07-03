@@ -5,7 +5,7 @@ https://github.com/okuzaki1208/20240307_self_introduction/assets/165624982/03e7a
 職業訓練 20240307提出の自己紹介ページです。  
 HTML,CSS,JavaScriptを使って制作しました。  
 
-## 基本機能説明
+## 基本機能
 各ジャンルのサムネイルをクリックすると内容が展開されます。  
 ずんだもんの立ち絵をクリックで、音声の再生・停止コントロールが可能です。  
   
@@ -27,6 +27,7 @@ https://github.com/okuzaki1208/20240307_self_introduction/assets/165624982/d59c8
 ボールをオブジェクトに当てることで、画面上部のカウンターが加算されます。  
 
 ## 参考・出典
+#### CSSのみで作るスライドショー
 lopan.jp  
 https://lopan.jp/css-animation/slideshow/
   
