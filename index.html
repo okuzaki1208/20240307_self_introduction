@@ -4,43 +4,25 @@
 <meta charset="utf-8">
 <title>好きなこと紹介ページ</title>
 <meta name="viewport" content="width=device-width">
-<meta name="robots" content="noindex,nofollow">
-<meta name="description" content="スライドショー">
-<meta name="theme-color" content="#553968">
 <link rel="canonical" href="https://lopan.jp/css-animation/slideshow/">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/slick.css"/>
-<link rel="stylesheet" href="css/slick-theme.css"/>
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="./js/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
 </head>
 
 <header>
 	<img id="block" src="./image/mb.png" style="width: 100px; height: 100px; position: absolute; cursor: pointer;">
-
 	<section class="nav">
-
 		<img src="image/MY-FAVORITES-PAGE.png" alt="navi-left" width="30%" height="auto">
 		<dev class="navi-right">
-
-
 			<div id="background_content">
 				<a id="openImageLink" href="#" target="_blank">背景画像を新規タブで開く</a>
 				<button id="reloadButton">背景画像を再読み込み</button>
+				<button id="toggleBoxesButton">ポケモンゲット機能をOFF</button>
+				<div id="counter">捕まえたポケモンの数: 0</div>
 			</div>
-
-			<div id="counter">捕まえたポケモンの数: 0</div>
-		<!-- <a class="btn btn-border-4" href="#a">まえがき</a>
-		<a class="btn btn-border-4" href="#b">好き①</a>
-		<a class="btn btn-border-4" href="#c">好②</a>
-		<a class="btn btn-border-4" href="#d">好③</a>
-		<a class="btn btn-border-4" href="#e">好④</a>
-		<a class="btn btn-border-4" href="#f">好⑤</a>
-		<a class="btn btn-border-4" href="#g">あとがき</a> -->
 		</dev>
 	</section>
-
 </header>
 
 <body>
@@ -48,31 +30,24 @@
 	<div id="box2" class="box"></div>
 	<div id="box3" class="box"></div>
 	<div id="box4" class="box"></div>
-	<!-- <video id="video-background" autoplay loop muted>
-		<source src="image/sunset.mp4" type="video/mp4">
-		Your browser does not support the video tag.
-	</video> -->
-	<audio id="collisionSound" src="./image/collisionsound.mp3"></audio>
-			<div class="pre-slideshow">
 
+	<audio id="collisionSound" src="./audio/collisionsound.mp3"></audio>
+			<div class="pre-slideshow">
 				<h2 id="a" class="midashi">　　　　～ まえがき ～</h2>
 				<dev class="zunda">
-
-
-
 					<img src="image/zunda_zenshin.png" alt="zunda A" width="20%" height="auto" onclick="toggleAudio('zunda1')">
 					<div class='zunda B'>
 						はじめまして！ボクの名前は「ずんだもん」なのだ。<br>
 						このページでは奥崎恭平さんの好きなものを、ボクが代わりに紹介するのだ！<br>
 						このページは、HTMLとCSSのみでコーディングされているのだ！<br>
 						スライドショーもJavascript無しで実装してみたから、左右のボタンで捲ってみてほしいのだ！<br>
-						　<br>
+						<br>
 						2024.03.07 追記<br>
 						遂にJavascriptを実装したのだ！<br>
 						アニメーションや画像クリックでの音声コントロールも実装してみたのだ！<br>
 					</div>
 				<div>
-					<audio src="image/zunda1.wav" alt="zunda D" controls type="audio/mp3" id="zunda1">test</audio>
+					<audio src="audio/zunda1.wav" alt="zunda D" controls type="audio/mp3" id="zunda1">test</audio>
 				</div>
 			</div>
 			<main class="main-top" id="sukinakotoContainer">
@@ -128,15 +103,13 @@
 								<br>
 								</div>
 								<div>
-								<audio src="image/zunda2.wav" alt="zunda C" controls type="audio/mp3" id="zunda2">test</audio>
+								<audio src="audio/zunda2.wav" alt="zunda C" controls type="audio/mp3" id="zunda2">test</audio>
 								</div>
 							</div>
 							<div class="button-container">
 								<button class="reset-button" onclick="resetSize(event)">閉じる</button>
 							</div>
 					</section>
-					
-
 
 				<section class="sukinakoto" onclick="toggleSize(this)">
 					<img src="./image/fishing.png" class="sukinakoto-image">
@@ -150,19 +123,19 @@
 						<input type="radio" name="slideshow2" id="switch10">
 						<div class="slideContents2">
 							<section id="slide6">
-								<img src="image/turi1.jpg" alt="" width="30%" height="30%">
+								<img src="image/tsuri1.jpg" alt="" width="30%" height="30%">
 							</section>
 							<section id="slide7">
-								<img src="image/turi2.jpg" alt="" width="70%" height="70%">
+								<img src="image/tsuri2.jpg" alt="" width="70%" height="70%">
 							</section>
 							<section id="slide8">
-								<img src="image/turi3.png" alt="" width="70%" height="70%">
+								<img src="image/tsuri3.png" alt="" width="70%" height="70%">
 							</section>
 							<section id="slide9">
-								<img src="image/turi4.png" alt="" width="70%" height="70%">
+								<img src="image/tsuri4.png" alt="" width="70%" height="70%">
 							</section>
 							<section id="slide10">
-								<img src="image/turi5.jpg" alt="" width="70%" height="70%">
+								<img src="image/tsuri5.jpg" alt="" width="70%" height="70%">
 							</section>
 						</div>
 						<p class="arrow prev">
@@ -190,7 +163,7 @@
 						・・・初期投資も継続投資もそこそこ高くついてしまうところが、タマにキズなのだ。<br>
 						</div>
 						<div>
-							<audio src="image/zunda3.wav" alt="zunda C" controls type="audio/mp3" id="zunda3">test</audio>
+							<audio src="audio/zunda3.wav" alt="zunda C" controls type="audio/mp3" id="zunda3">test</audio>
 						</div>
 					</div>
 
@@ -218,7 +191,7 @@
 							音楽で食っていく道を一度は夢見るものなのだ！<br>
 						</div>
 						<div>
-							<audio src="image/zunda4.wav" alt="zunda C" controls type="audio/mp3" id="zunda4">test</audio>
+							<audio src="audio/zunda4.wav" alt="zunda C" controls type="audio/mp3" id="zunda4">test</audio>
 						</div>
 					</div>
 
@@ -242,7 +215,7 @@
 							それにしても、このボクを差し置いてゆっくり解説動画を作るなんて、とんだ失敬なのだ！<br>
 						</div>
 						<div>
-						<audio src="image/zunda5.wav" alt="zunda C" controls type="audio/mp3" id="zunda5">test</audio>
+						<audio src="audio/zunda5.wav" alt="zunda C" controls type="audio/mp3" id="zunda5">test</audio>
 						</div>
 						
 					</div>
@@ -258,7 +231,7 @@
 						</div>
 							<img src="image/yukkuri.png" alt="yukkuri A" width="20%" height="auto" onclick="toggleAudio('yukkuri1')">
 						<div>
-							<audio src="image/yukkuri1.wav" alt="yukkuri C" controls type="audio/mp3" id="yukkuri1">test</audio>
+							<audio src="audio/yukkuri1.wav" alt="yukkuri C" controls type="audio/mp3" id="yukkuri1">test</audio>
 						</div>
 					</div>
 					
@@ -272,7 +245,7 @@
 							ボクの動画のシェアをもっと広げて、いつかあなた方をご退場に導いて差し上げるのだ！！<br>
 						</div>
 					<div>
-						<audio src="image/zunda6.wav" alt="zunda C" controls type="audio/mp3" id="zunda6">test</audio>
+						<audio src="audio/zunda6.wav" alt="zunda C" controls type="audio/mp3" id="zunda6">test</audio>
 						</div>
 					</div>
 
@@ -297,7 +270,7 @@
 							目指せ100点満点なのだ！！<br>
 						</div>
 						<div>
-							<audio src="image/zunda7.wav" alt="zunda C" controls type="audio/mp3" id="zunda7">test</audio>
+							<audio src="audio/zunda7.wav" alt="zunda C" controls type="audio/mp3" id="zunda7">test</audio>
 						</div>
 					</dev>
 
@@ -306,21 +279,11 @@
 					</div>
 
 				</section>
+			</main>
 
-
-
-				</main>
-
-
-
-				<!-- <main class="main-middle">
-					<section class="sukinakoto_dummy"></section>	
-				</main> -->
-
-				<main class="sukinakoto_dummy"></main>
-
+			<main class="sukinakoto_dummy"></main><br>
+				
 				<footer class="pre-slideshow">
-
 					<h2 id="g" class="midashi">～ あとがき ～</h2>
 					<div class="zunda">
 						<img src="image/zunda_zenshin.png" alt="zunda A" width="20%" height="auto" onclick="toggleAudio('zunda8')">
@@ -331,16 +294,16 @@
 								Javascriptを使うともっと色々なことができるのかな？
 								さらに勉強を頑張らないとなのだ！<br>
 								ご視聴ありがとうございました！！<br>
-								　<br>
+								<br>
 								2024.03.07 追記<br>
 								javascriptのおかげで、ページ設計の自由度が大幅にアップしたのだ！！<br>
 								もっと練習して、スキルアップしていくのだ！<br>
 						</div>
 						<div>
-							<audio src="image/zunda8.wav" alt="zunda D" controls type="audio/mp3" id="zunda8">test</audio>
+							<audio src="audio/zunda8.wav" alt="zunda D" controls type="audio/mp3" id="zunda8">test</audio>
 						</div>
 					</div>
 				</footer>
-			<script src="./js/sukinakoto.js"></script>
-		</body>
+	<script src="./js/sukinakoto.js"></script>
+</body>
 </html>
