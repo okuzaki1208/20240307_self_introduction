@@ -23,12 +23,10 @@ function randomValues() {
     targets: '.sukinakoto:not(.large)', // .sukinakoto.large以外の要素にのみアニメーションを適用
     translateX: function() {
       const randomValue = anime.random(-15, 15);
-      console.log('Random translateX:', randomValue);
       return randomValue;
     },
     translateY: function() {
       const randomValue = anime.random(-15, 15);
-      console.log('Random translateY:', randomValue);
       return randomValue;
     },
     easing: 'easeInOutQuad',
@@ -97,33 +95,112 @@ function toggleAudio(audioId) {
 
 
 // 背景ランダムで出すやつ
-    function loadRandomImage() {
-      fetch('https://source.unsplash.com/random')
-        .then(response => {
-          if (response.ok) {
-            return response.url;
-          } else {
-            throw new Error('Network response was not ok.');
-          }
-        })
-        .then(imageUrl => {
-          document.body.style.backgroundImage = `url(${imageUrl})`;
-          document.getElementById("openImageLink").href = imageUrl;
-        })
-        .catch(error => {
-          console.error('There was a problem with the fetch operation:', error);
-        });
-    }
-
-    // Initial loading of random image
+function loadRandomImage() {
+    // nowloading 要素を作成
+    const nowLoadingElement = document.createElement('div');
+    nowLoadingElement.id = 'nowLoading';
+    nowLoadingElement.style.cssText = `
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -9999; /* nowloading 要素を最下層に表示 */
+      background-image: url(./image/nowloading.gif); /* nowloading.gif を背景に設定 */
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `;
+  
+    // now loading... テキストを追加
+    const nowLoadingText = document.createElement('span');
+    nowLoadingText.textContent = 'Now Loading...';
+    nowLoadingText.style.cssText = `
+      font-size: 12rem;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+    `;
+  
+    nowLoadingElement.appendChild(nowLoadingText);
+    document.body.appendChild(nowLoadingElement);
+  
+    fetch(`https://picsum.photos/1000/800`) // ランダムな画像を取得 (1000x800ピクセル)
+      .then((response) => {
+        if (response.ok) {
+          return response.url;
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .then((imageUrl) => {
+        // 画像取得完了後にnowloading 要素を削除
+        document.body.removeChild(nowLoadingElement); 
+  
+        document.body.style.backgroundImage = `url(${imageUrl})`;
+        document.getElementById('openImageLink').href = imageUrl;
+      })
+      .catch((error) => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }
+  
+  // 最初にランダム画像を読み込む
+  loadRandomImage();
+  
+  // 更新ボタンのイベントリスナー
+  document.getElementById('reloadButton').addEventListener('click', function () {
     loadRandomImage();
+  });
 
-    // Reload button event listener
-    document.getElementById("reloadButton").addEventListener("click", function() {
-      loadRandomImage();
+
+
+
+/* ポケモンゲット機能のON・OFFボタン*/
+
+    // ボタン要素を取得
+    const toggleBoxesButton = document.getElementById('toggleBoxesButton');
+
+    // ボタンがクリックされたときの処理
+    toggleBoxesButton.addEventListener('click', function() {
+        // 対象の要素を取得
+        const boxes = document.querySelectorAll('.box');
+        const mbImage = document.getElementById('block');
+        const counter = document.getElementById('counter');
+
+        // 各要素の表示を切り替える
+        boxes.forEach(box => {
+            // 現在の表示状態を取得
+            const display = window.getComputedStyle(box).display;
+
+            // 表示切り替え
+            if (display === 'block') {
+                box.style.display = 'none';
+            } else {
+                box.style.display = 'block';
+            }
+        });
+
+        // mb.pngの表示を切り替える
+        const mbDisplay = window.getComputedStyle(mbImage).display;
+        if (mbDisplay === 'block') {
+            mbImage.style.display = 'none';
+        } else {
+            mbImage.style.display = 'block';
+        }
+
+        // counterの表示を切り替える
+        const counterDisplay = window.getComputedStyle(counter).display;
+        if (counterDisplay === 'block') {
+            counter.style.display = 'none';
+            toggleBoxesButton.textContent = 'ポケモンゲット機能をON';
+        } else {
+            counter.style.display = 'block';
+            toggleBoxesButton.textContent = 'ポケモンゲット機能をOFF';
+        }
     });
-
-
 
 
 
