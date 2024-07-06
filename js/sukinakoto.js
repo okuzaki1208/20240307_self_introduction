@@ -195,10 +195,10 @@ function loadRandomImage() {
         const counterDisplay = window.getComputedStyle(counter).display;
         if (counterDisplay === 'block') {
             counter.style.display = 'none';
-            toggleBoxesButton.textContent = 'ポケモンゲット機能をON';
+            toggleBoxesButton.textContent = 'ミニゲーム機能をON';
         } else {
             counter.style.display = 'block';
-            toggleBoxesButton.textContent = 'ポケモンゲット機能をOFF';
+            toggleBoxesButton.textContent = 'ミニゲーム機能をOFF';
         }
     });
 
@@ -304,7 +304,7 @@ function loadRandomImage() {
                     // Increment destroyed count
                     destroyedCount++;
                     // Update counter
-                    counterElement.textContent = `捕まえたポケモンの数: ${destroyedCount}`;
+                    counterElement.textContent = `捕まえたの数: ${destroyedCount}`;
 
 		            // Play collision sound
 					playCollisionSound();
